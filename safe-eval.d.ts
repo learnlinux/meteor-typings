@@ -1,1 +1,1 @@
-declare function safeEval(code : string, context: any, options: any);
+ declare function safeEval(code : string, context: any, options: any) : any;
