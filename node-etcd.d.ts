@@ -4,10 +4,10 @@ declare module 'node-etcd' {
       compareAndDelete(key: any, oldvalue: any, options: any, callback: any): any;
       compareAndSwap(key: any, value: any, oldvalue: any, options: any, callback: any): any;
       create(dir: any, value: any, options: any, callback: any): any;
-      del(key: any, options: any, callback: any): any;
+      del(key: any, options?: any, callback: any): any;
       delSync(key: any, options: any): any;
-      delete(key: any, options: any, callback: any): any;
-      get(key: any, options: any, callback: any): any;
+      delete(key: any, options?: any, callback: any): any;
+      get(key: any, options?: any, callback: any): any;
       getHosts(): any;
       getSync(key: any, options: any): any;
       leader(callback: any): any;
