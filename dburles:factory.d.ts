@@ -1,5 +1,17 @@
 declare module 'meteor/dburles:factory' {
-  export module Factory {
-    class Factory : any;
+
+  import { Mongo } 'meteor/mongo';
+
+  export class FactoryObject<T> {
+    after(fn : (doc : T) => void) : FactoryObject<T>;
+  }
+
+  export class Factory {
+    static define<T>(name : string, Mongo.Collection<T>, doc : T) : FactoryObject<T>;
+    static get<T>(name : string) : FactoryObject<T>;
+    static build<T>(name : string, doc? : T) : void;
+    static tree<T>(name : string, doc? : T) : T;
+    static create<T>(name: string, doc? : T) : void;
+    static extend<T>(name: string, doc? : T) : FactoryObject<T>;
   }
 }
