@@ -1,5 +1,5 @@
 declare module 'node-etcd' {
-   import Etcd = require('node-etcd');
+   import * as Etcd from 'lib/index.js';
    export class Etcd {
       constructor(hosts?: any, options?: any);
       compareAndDelete(key: any, oldvalue: any, options: any, callback: any): any;
