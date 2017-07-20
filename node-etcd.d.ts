@@ -1,6 +1,5 @@
 declare module 'node-etcd' {
-   import * as Etcd from 'node-etcd';
-   export class Etcd {
+    class Etcd {
       constructor(hosts?: any, options?: any);
       compareAndDelete(key: any, oldvalue: any, options: any, callback: any): any;
       compareAndSwap(key: any, value: any, oldvalue: any, options: any, callback: any): any;
@@ -30,4 +29,6 @@ declare module 'node-etcd' {
       watchIndex(key: any, index: any, options: any, callback: any): any;
       watcher(key: any, index: any, options: any): any;
    }
+
+   declare var Etcd : Etcd = require('node-etcd');
 }
